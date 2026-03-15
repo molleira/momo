@@ -1,0 +1,53 @@
+/* ---------- document ---------- */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ---------- cos ---------- */
+
+body {
+  /* font-family: Arial, sans-serif; */
+  font-family: 'Mark Pro', monospace;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+
+.contenidor {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  padding: 2em;
+  gap: 4em;
+}
+
+/* ---------- general ---------- */
+
+h1 {
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+/* ---------- titol ---------- */
+
+.titol {
+  margin: 1em 0;
+
+}
+
+/* ---------- imatge ---------- */
+
+.imatge {
+  max-width: 100%;
+  height: auto;
+  border-radius: 1em;
+  opacity: 1;
+}
+
+.imatge:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+  opacity: 0.7;
+}
