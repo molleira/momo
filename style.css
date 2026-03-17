@@ -9,57 +9,77 @@
 /* ---------- cos ---------- */
 
 body {
-  font-family: 'Bebas Neue', sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #1c1c1c;
+  font-family: 'Roboto Mono', sans-serif;
   color: #fff;
 }
 
-/* ---------- sections ---------- */
+/* ---------- seccions ---------- */
 
-.section-intro {
+.entrada {
   position: relative;
+  min-height: 50vh;
+  padding: 2em;
   background-image: url('img/ultraschall.jpg');
-  background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
   background-attachment: fixed;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  padding: 4em 0;
 }
 
-.section-intro::before {
-  content: '';
+@media (min-width: 768px) {
+  .entrada {
+    padding: 4em;
+  }
+}
+
+.entrada::before {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, rgba(45, 45, 45, 0.85) 0%, rgba(28, 28, 28, 0.9) 100%);
-  z-index: 1;
+  content: '';
+  background: linear-gradient(135deg, rgba(45, 45, 45, 0.6) 0%, rgba(0, 0, 0, 0.9) 100%);
 }
 
-.section-intro .entrada {
-  position: relative;
-  z-index: 2;
-}
-
-.section-productes {
-  background: linear-gradient(135deg, #1c1c1c 0%, #0d0d0d 100%);
-  padding: 3em 0;
-  min-height: 100vh;
-}
-
-.contenidor {
+.productes {
+  max-width: 1200px;
+  padding: 2em;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  max-width: 1200px;
   margin: 0 auto;
-  padding: 0 2em;
-  gap: 4em;
+  gap: 2em;
+}
+
+@media (min-width: 768px) {
+  .productes {
+    padding: 4em;
+  }
+}
+
+/* ---------- entrada ---------- */
+
+.text {
+  max-width: 70ch;
+  margin: 0 auto;
+}
+
+.entrada h1 {
+  position: relative;
+  font-size: 1.75rem;
+  letter-spacing: 3px;
+  margin-bottom: 1.75rem;
+  text-transform: uppercase;
+}
+
+.entrada p {
+  position: relative;
+  margin-bottom: 1rem;
+  line-height: 1.75;
+}
+
+.entrada p:last-child {
+  margin-top: 1.75rem;
+  margin-bottom: 0;
+  font-style: italic;
 }
 
 /* ---------- tarjeta ---------- */
@@ -68,119 +88,48 @@ body {
   position: relative;
   overflow: hidden;
   border-radius: 1em;
-  background-color: #1c1c1c;
+  border: 1px solid #1c1c1c;
+}
+
+.tarjeta:last-child {
 }
 
 .tarjeta img{
     width: 100%;
-    display: block;
 }
 
+/* ---------- overlay ---------- */
+
 .overlay {
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(transparent 20%, #1c1c1c 70%);
-    position: absolute;
-    left: 0;
-    top: 0;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    flex-direction: column;
-    padding: 0 2em 2em;
-    text-align: center;
-    font-size: 1rem;
-    z-index: 2;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(transparent 20%, #1c1c1c 70%);
+  position: absolute;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: column;
+  padding: 2em;
+  text-align: center;
 }
 
 .overlay h3 {
-    font-weight: 500;
-    margin-bottom: .5rem;
-    font-size: 1.5rem;
-    letter-spacing: 2px;
+  font-weight: 500;
+  margin-bottom: .5rem;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
 }
 
 .overlay p {
-    margin-bottom: 1rem;
+  margin-bottom: 1rem;
 }
 
 .overlay a {
-    color: #1c1c1c;
-    text-decoration: none;
-    font-size: .9rem;
-    background: #fff;
-    border-radius: 1em;
-    padding: .75em 3em;
-    display: inline-block;
-    transition: background-color 0.3s;
-}
-
-.overlay a:hover {
-    background-color: #e0e0e0;
-}
-
-.tarjeta:hover img{
-    transform: scale(1.1);
-}
-
-/* .tarjeta:hover .overlay{
-    opacity: 1;
-} */
-
-/* ---------- entrada ---------- */
-
-.entrada {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 2em;
-  /* text-align: center; */
-}
-
-.entrada h4 {
-  font-size: 2rem;
-  letter-spacing: 3px;
-  margin-bottom: 2.5rem;
-  /* text-transform: uppercase; */
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
-}
-
-.entrada p {
-  margin-bottom: 1rem;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 1.05rem;
-  line-height: 1.7;
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
-}
-
-.entrada p:last-child {
-  margin-top: 2rem;
-  font-style: italic;
-}
-
-@media (max-width: 768px) {
-  .section-intro {
-    min-height: auto;
-    padding: 3em 0;
-  }
-  
-  .section-productes {
-    padding: 3em 0;
-  }
-  
-  .entrada {
-    padding: 1.5em;
-  }
-  
-  .entrada h4 {
-    font-size: 1.8rem;
-  }
-  
-  .entrada p {
-    font-size: 0.95rem;
-  }
-  
-  .contenidor {
-    padding: 0 1em;
-    gap: 2.5em;
-  }
+  color: #1c1c1c;
+  text-decoration: none;
+  font-size: .9rem;
+  background: #fff;
+  border-radius: 1em;
+  padding: .5em 3em;
 }
