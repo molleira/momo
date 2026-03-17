@@ -111,9 +111,6 @@ body {
   aspect-ratio: 3 / 4;
 }
 
-.tarjeta:last-child {
-}
-
 .tarjeta img{
   width: 100%;
   height: 100%;
